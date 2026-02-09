@@ -3,7 +3,9 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <small>NovaBox. Current Time: {currentDateTime}</small>
+      <p className="footer__text">
+        NovaBox © 2026 | Current Time: {currentDateTime}
+      </p>
     </footer>
   );
 }
