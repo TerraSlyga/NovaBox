@@ -2,9 +2,10 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
-  const boxes = [
+  const [boxes, setBoxes] = useState([
     {
       id: 1,
       name: "10 кг",
@@ -21,8 +22,7 @@ function App() {
       image:
         "https://shop.novaposhta.ua/img/p/3/5/9/4/3594-thickbox_default.jpg",
     },
-  ];
-
+  ]);
   return (
     <div className="App">
       <Header />

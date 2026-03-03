@@ -1,3 +1,5 @@
+import LikeButton from "./LikeButton";
+
 export default function BoxItem({ box }) {
   return (
     <li className="box__item">
@@ -5,13 +7,16 @@ export default function BoxItem({ box }) {
       <h3 className="box__name">{box.name}</h3>
       <p className="box__description">{box.description}</p>
       <p className="box__price">{box.price} грн</p>
-      <button
-        className="box__edit-button"
-        type="button"
-        aria-label={`Edit ${box.name}`}
-      >
-        Edit
-      </button>
+      <div className="box__actions">
+        <button
+          className="box__edit-button"
+          type="button"
+          aria-label={`Edit ${box.name}`}
+        >
+          Edit
+        </button>
+        <LikeButton className="box__like-button" />
+      </div>
       <button
         className="box__delete-button"
         type="button"
