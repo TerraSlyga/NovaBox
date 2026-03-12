@@ -35,6 +35,10 @@ function App() {
     });
   };
 
+  const addBox = (newBox) => {
+    setBoxes((prev) => [...prev, { ...newBox, id: Date.now() }]);
+  };
+
   return (
     <div className="App">
       <Header filter={filterBoxes} setFilter={setFilterBoxes} />
@@ -43,6 +47,7 @@ function App() {
         filter={filterBoxes}
         likedBoxes={likedBoxes}
         toggleLike={toggleLike}
+        addBox={addBox}
       />
       <Footer />
     </div>

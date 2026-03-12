@@ -448,3 +448,20 @@
   padding: 2rem;
   grid-column: 1 / -1;
 }
+
+.box-category__select {
+  padding: 0.85rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+  cursor: pointer;
+}
+
+.box-category__select:focus {
+  outline: none;
+  border-color: #dc143c;
+  box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+}
