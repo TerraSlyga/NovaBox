@@ -23,10 +23,27 @@ function App() {
         "https://shop.novaposhta.ua/img/p/3/5/9/4/3594-thickbox_default.jpg",
     },
   ]);
+
+  const [filterBoxes, setFilterBoxes] = useState("all");
+  const [likedBoxes, setLikedBoxes] = useState(new Set());
+
+  const toggleLike = (id) => {
+    setLikedBoxes((prev) => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  };
+
   return (
     <div className="App">
-      <Header />
-      <Main boxes={boxes} />
+      <Header filter={filterBoxes} setFilter={setFilterBoxes} />
+      <Main
+        boxes={boxes}
+        filter={filterBoxes}
+        likedBoxes={likedBoxes}
+        toggleLike={toggleLike}
+      />
       <Footer />
     </div>
   );

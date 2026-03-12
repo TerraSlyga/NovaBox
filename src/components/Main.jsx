@@ -1,7 +1,7 @@
 import BoxAdderMenu from "./BoxAdderMenu";
 import BoxList from "./BoxList";
 
-export default function Main({ boxes }) {
+export default function Main({ boxes, filter, likedBoxes, toggleLike }) {
   return (
     <main className="main">
       <section className="text__section">
@@ -9,7 +9,12 @@ export default function Main({ boxes }) {
       </section>
       <section className="main__section">
         <BoxAdderMenu />
-        <BoxList boxes={boxes} />
+        <BoxList
+          boxes={boxes}
+          filter={filter}
+          likedBoxes={likedBoxes}
+          toggleLike={toggleLike}
+        />
       </section>
     </main>
   );

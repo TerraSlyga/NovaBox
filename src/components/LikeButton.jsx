@@ -1,15 +1,8 @@
-import React from "react";
-import { useState } from "react";
-
-export default function LikeButton({ className }) {
-  const [liked, setLiked] = useState(false);
-  const handleClick = () => {
-    setLiked(!liked);
-  };
+export default function LikeButton({ className, liked, onToggle }) {
   return (
     <button
       className={`${className} ${liked ? "box__like-button_liked" : ""}`}
-      onClick={handleClick}
+      onClick={onToggle}
     >
       {liked ? "❤️" : "🤍"}
     </button>

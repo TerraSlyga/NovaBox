@@ -1,6 +1,6 @@
 import LikeButton from "./LikeButton";
 
-export default function BoxItem({ box }) {
+export default function BoxItem({ box, liked, onToggleLike }) {
   return (
     <li className="box__item">
       <img className="box__image" src={box.image} alt={box.name} />
@@ -8,20 +8,16 @@ export default function BoxItem({ box }) {
       <p className="box__description">{box.description}</p>
       <p className="box__price">{box.price} грн</p>
       <div className="box__actions">
-        <button
-          className="box__edit-button"
-          type="button"
-          aria-label={`Edit ${box.name}`}
-        >
+        <button className="box__edit-button" type="button">
           Edit
         </button>
-        <LikeButton className="box__like-button" />
+        <LikeButton
+          className="box__like-button"
+          liked={liked}
+          onToggle={() => onToggleLike(box.id)}
+        />
       </div>
-      <button
-        className="box__delete-button"
-        type="button"
-        aria-label={`Delete ${box.name}`}
-      >
+      <button className="box__delete-button" type="button">
         Delete
       </button>
     </li>
