@@ -1,5 +1,6 @@
 import BoxAdderMenu from "./BoxAdderMenu";
 import BoxList from "./BoxList";
+import DailyTasks from "./DailyTasks";
 
 export default function Main({
   boxes,
@@ -13,6 +14,7 @@ export default function Main({
       <section className="text__section">
         <h2 className="main__text">Welcome to NovaBox!</h2>
       </section>
+      <DailyTasks />
       <section className="main__section">
         <BoxAdderMenu addBox={addBox} />
         <BoxList
