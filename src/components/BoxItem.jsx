@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
 
 export default function BoxItem({ box, liked, onToggleLike }) {
@@ -8,9 +9,9 @@ export default function BoxItem({ box, liked, onToggleLike }) {
       <p className="box__description">{box.description}</p>
       <p className="box__price">{box.price} грн</p>
       <div className="box__actions">
-        <button className="box__edit-button" type="button">
-          Edit
-        </button>
+        <Link to={`/box/${box.id}`} className="box__detail-button">
+          Детальніше →
+        </Link>
         <LikeButton
           className="box__like-button"
           liked={liked}

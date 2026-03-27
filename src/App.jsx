@@ -1,8 +1,15 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Main from "./components/Main";
 import Footer from "./components/Footer";
 import "./App.css";
 import { useState, useEffect } from "react";
+
+// Pages
+import HomePage from "./pages/HomePage";
+import BoxesPage from "./pages/BoxesPage";
+import AboutPage from "./pages/AboutPage";
+import BoxDetail from "./pages/BoxDetail";
+import NotFound from "./pages/NotFound";
 
 // Функція для завантаження даних з localStorage
 const loadDataFromStorage = () => {
@@ -58,13 +65,34 @@ function App() {
   return (
     <div className="App">
       <Header filter={filterBoxes} setFilter={setFilterBoxes} />
-      <Main
-        boxes={boxes}
-        filter={filterBoxes}
-        likedBoxes={likedBoxes}
-        toggleLike={toggleLike}
-        addBox={addBox}
-      />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/boxes"
+          element={
+            <BoxesPage
+              boxes={boxes}
+              filter={filterBoxes}
+              likedBoxes={likedBoxes}
+              toggleLike={toggleLike}
+              addBox={addBox}
+              setFilter={setFilterBoxes}
+            />
+          }
+        />
+        <Route
+          path="/box/:id"
+          element={
+            <BoxDetail
+              boxes={boxes}
+              likedBoxes={likedBoxes}
+              toggleLike={toggleLike}
+            />
+          }
+        />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Footer />
     </div>
   );
