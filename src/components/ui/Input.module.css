@@ -1,0 +1,85 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.label {
+  display: block;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.input {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: var(--transition-base);
+  min-height: 2.5rem;
+}
+
+.input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+/* === FOCUS STATE === */
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+  background-color: var(--color-background);
+}
+
+[data-theme="dark"] .input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+/* === HOVER STATE === */
+.input:hover:not(.disabled):not(:focus) {
+  border-color: var(--color-text-tertiary);
+  background-color: var(--color-background);
+}
+
+/* === ERROR STATE === */
+.input.error {
+  border-color: var(--color-danger);
+}
+
+.input.error:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+[data-theme="dark"] .input.error:focus {
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2);
+}
+
+/* === DISABLED STATE === */
+.input.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--color-background-secondary);
+}
+
+.input.disabled:hover {
+  border-color: var(--color-border);
+}
+
+/* === HELPER TEXT === */
+.helperText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-tight);
+}
+
+.helperText.errorText {
+  color: var(--color-danger);
+  font-weight: var(--font-weight-semibold);
+}

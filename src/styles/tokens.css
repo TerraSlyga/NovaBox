@@ -1,0 +1,153 @@
+/* ============================================
+   DESIGN TOKENS - CSS VARIABLES
+   ============================================ */
+
+/* LIGHT THEME (DEFAULT) */
+:root[data-theme="light"],
+:root {
+  /* === COLORS === */
+  --color-primary: #dc143c;
+  --color-primary-dark: #b91c1c;
+  --color-primary-light: #ff6b6b;
+
+  --color-secondary: #6366f1;
+  --color-secondary-dark: #4f46e5;
+  --color-secondary-light: #818cf8;
+
+  --color-danger: #ef4444;
+  --color-danger-dark: #dc2626;
+  --color-danger-light: #fca5a5;
+
+  --color-success: #10b981;
+  --color-success-dark: #059669;
+  --color-success-light: #6ee7b7;
+
+  --color-background: #ffffff;
+  --color-background-secondary: #f9f9f9;
+  --color-background-tertiary: #f5f5f5;
+
+  --color-text: #1a1a1a;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+
+  --color-border: #e0e0e0;
+  --color-border-light: #f0f0f0;
+
+  --color-shadow: rgba(0, 0, 0, 0.15);
+  --color-shadow-sm: rgba(0, 0, 0, 0.08);
+  --color-shadow-lg: rgba(0, 0, 0, 0.25);
+
+  /* === SEMANTIC COLORS === */
+  --bg-primary: #ffffff;
+  --text-primary: #1a1a1a;
+  --accent-primary: #dc143c;
+  --accent-dark: #b91c1c;
+  --accent-light: #f5f5f5;
+  --card-bg: #f9f9f9;
+  --card-text: #333333;
+  --card-border: #e0e0e0;
+  --footer-bg: #f5f5f5;
+  --button-hover: #f0f0f0;
+  --shadow-color: rgba(0, 0, 0, 0.15);
+  --header-gradient: linear-gradient(135deg, #dc143c 0%, #b91c1c 100%);
+  --header-border: #8b0000;
+
+  /* === TYPOGRAPHY === */
+  --font-family-base:
+    "Segoe UI", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-mono: "Courier New", monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* === SPACING === */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 2.5rem;
+  --spacing-3xl: 3rem;
+  --spacing-4xl: 4rem;
+
+  /* === BORDER RADIUS === */
+  --radius-none: 0;
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+}
+
+/* DARK THEME */
+:root[data-theme="dark"] {
+  /* === COLORS === */
+  --color-primary: #ff6b6b;
+  --color-primary-dark: #ff5252;
+  --color-primary-light: #ffa8a8;
+
+  --color-secondary: #818cf8;
+  --color-secondary-dark: #6366f1;
+  --color-secondary-light: #a5b4fc;
+
+  --color-danger: #f87171;
+  --color-danger-dark: #ef4444;
+  --color-danger-light: #fca5a5;
+
+  --color-success: #4ade80;
+  --color-success-dark: #22c55e;
+  --color-success-light: #86efac;
+
+  --color-background: #1a1a1a;
+  --color-background-secondary: #2a2a2a;
+  --color-background-tertiary: #333333;
+
+  --color-text: #ffffff;
+  --color-text-secondary: #d0d0d0;
+  --color-text-tertiary: #a0a0a0;
+
+  --color-border: #444444;
+  --color-border-light: #333333;
+
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-shadow-sm: rgba(0, 0, 0, 0.3);
+  --color-shadow-lg: rgba(0, 0, 0, 0.7);
+
+  /* === SEMANTIC COLORS === */
+  --bg-primary: #1a1a1a;
+  --text-primary: #ffffff;
+  --accent-primary: #ff6b6b;
+  --accent-dark: #ff5252;
+  --accent-light: #2a2a2a;
+  --card-bg: #2a2a2a;
+  --card-text: #e0e0e0;
+  --card-border: #444444;
+  --footer-bg: #2a2a2a;
+  --button-hover: #3a3a3a;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --header-gradient: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  --header-border: #444444;
+}

@@ -1,0 +1,110 @@
+.button {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: var(--font-size-base);
+}
+
+/* === SIZE VARIANTS === */
+.size-sm {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  min-height: 2rem;
+}
+
+.size-md {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  min-height: 2.5rem;
+}
+
+.size-lg {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  font-size: var(--font-size-lg);
+  min-height: 3rem;
+}
+
+/* === VARIANT: PRIMARY === */
+.variant-primary {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 2px 4px var(--color-shadow-sm);
+}
+
+.variant-primary:hover:not(.disabled) {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 4px 8px var(--color-shadow);
+  transform: translateY(-1px);
+}
+
+.variant-primary:active:not(.disabled) {
+  box-shadow: 0 1px 2px var(--color-shadow-sm);
+  transform: translateY(0);
+}
+
+/* === VARIANT: SECONDARY === */
+.variant-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+  box-shadow: 0 2px 4px var(--color-shadow-sm);
+}
+
+.variant-secondary:hover:not(.disabled) {
+  background-color: var(--color-secondary-dark);
+  box-shadow: 0 4px 8px var(--color-shadow);
+  transform: translateY(-1px);
+}
+
+.variant-secondary:active:not(.disabled) {
+  box-shadow: 0 1px 2px var(--color-shadow-sm);
+  transform: translateY(0);
+}
+
+/* === VARIANT: DANGER === */
+.variant-danger {
+  background-color: var(--color-danger);
+  color: white;
+  box-shadow: 0 2px 4px var(--color-shadow-sm);
+}
+
+.variant-danger:hover:not(.disabled) {
+  background-color: var(--color-danger-dark);
+  box-shadow: 0 4px 8px var(--color-shadow);
+  transform: translateY(-1px);
+}
+
+.variant-danger:active:not(.disabled) {
+  box-shadow: 0 1px 2px var(--color-shadow-sm);
+  transform: translateY(0);
+}
+
+/* === VARIANT: OUTLINE === */
+.variant-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.variant-outline:hover:not(.disabled) {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.variant-outline:active:not(.disabled) {
+  transform: translateY(0);
+}
+
+/* === DISABLED STATE === */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}

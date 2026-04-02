@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Input, Button } from "./ui";
 
 const CATEGORIES = ["Мала", "Середня", "Велика", "XL"];
 
@@ -29,54 +30,51 @@ export default function BoxAdderMenu({ addBox }) {
   return (
     <div className="box__menu">
       <form className="box__form" onSubmit={handleSubmit}>
-        <label htmlFor="box-name__input" className="box-image__label">
-          Нова коробка
-        </label>
+        <h3 className="box-image__label">Нова коробка</h3>
 
-        <input
-          className="box-name__input"
-          id="box-name__input"
+        <Input
+          label="Назва коробки *"
+          placeholder="Введіть назву"
           type="text"
-          placeholder="Назва коробки *"
-          aria-label="Box name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
 
-        <input
-          className="box-description__input"
+        <Input
+          label="Опис коробки"
+          placeholder="Введіть опис (необов'язково)"
           type="text"
-          placeholder="Опис коробки"
-          aria-label="Box description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <select
-          className="box-category__select"
-          aria-label="Box category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          {CATEGORIES.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat}
-            </option>
-          ))}
-        </select>
+        <div className="box-category__wrapper">
+          <label htmlFor="box-category__select">Категорія</label>
+          <select
+            id="box-category__select"
+            className="box-category__select"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            {CATEGORIES.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
 
-        <input
-          className="box-price__input"
+        <Input
+          label="Ціна (грн)"
+          placeholder="0"
           type="number"
-          placeholder="Ціна (грн)"
-          aria-label="Box price"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
 
-        <button className="box-add__button" type="submit" aria-label="Add box">
+        <Button type="submit" variant="primary" size="md">
           Додати коробку
-        </button>
+        </Button>
       </form>
     </div>
   );
