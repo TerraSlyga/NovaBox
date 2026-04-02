@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./App.css";
 import { useState, useEffect } from "react";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 // Pages
 import HomePage from "./pages/HomePage";
@@ -63,38 +64,40 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header filter={filterBoxes} setFilter={setFilterBoxes} />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/boxes"
-          element={
-            <BoxesPage
-              boxes={boxes}
-              filter={filterBoxes}
-              likedBoxes={likedBoxes}
-              toggleLike={toggleLike}
-              addBox={addBox}
-              setFilter={setFilterBoxes}
-            />
-          }
-        />
-        <Route
-          path="/box/:id"
-          element={
-            <BoxDetail
-              boxes={boxes}
-              likedBoxes={likedBoxes}
-              toggleLike={toggleLike}
-            />
-          }
-        />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Header filter={filterBoxes} setFilter={setFilterBoxes} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/boxes"
+            element={
+              <BoxesPage
+                boxes={boxes}
+                filter={filterBoxes}
+                likedBoxes={likedBoxes}
+                toggleLike={toggleLike}
+                addBox={addBox}
+                setFilter={setFilterBoxes}
+              />
+            }
+          />
+          <Route
+            path="/box/:id"
+            element={
+              <BoxDetail
+                boxes={boxes}
+                likedBoxes={likedBoxes}
+                toggleLike={toggleLike}
+              />
+            }
+          />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

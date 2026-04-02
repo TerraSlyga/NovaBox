@@ -1,8 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function Header({ filter, setFilter }) {
+  const { theme, toggleTheme, colors } = useTheme();
+
+  const headerStyle = {
+    background: colors.header,
+    borderBottom: `3px solid ${colors.headerBorder}`,
+  };
+
+  const buttonStyle = {
+    background: colors.accentLight,
+    color: colors.text,
+    borderColor: colors.text,
+  };
+
   return (
-    <header className="header">
+    <header className="header" style={headerStyle}>
       <Link to="/" className="header__logo">
         <h1 className="header__title">NovaBox</h1>
       </Link>
@@ -35,6 +49,15 @@ export default function Header({ filter, setFilter }) {
       </nav>
 
       <div className="header__controls">
+        <button
+          className="header__theme-button"
+          type="button"
+          onClick={toggleTheme}
+          title={`Перейти на ${theme === "light" ? "темну" : "світлу"} тему`}
+          style={buttonStyle}
+        >
+          {theme === "light" ? "🌙 Темна" : "☀️ Світла"}
+        </button>
         <button
           className={`header__filter-button ${filter === "liked" ? "header__filter-button_active" : ""}`}
           type="button"
